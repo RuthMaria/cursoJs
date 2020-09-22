@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com Dom</title>
+
+    <style>
+        body{
+            background: rgb(37, 37, 121);
+            color: white;
+            font: normal 15pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo: Iniciando estudos com DOM</h1>
+    <p>Paragrafo 1</p>
+    <p>paragrafo 2: Aprendendo a usar <strong>DOM</strong> em javascript</p>
+    <div class = 'msg'> Tag div CLASS</div>
+    <div id = 'titulo'> Tag div ID</div>    
+    <div name = 'teste'> Tag div NAME </div>
+
+    <script>
+        var porMarca = document.getElementsByTagName('p')[1] // [0] indica o objeto que será selecionado, no caso a primeira tag 'p'
+        document.write('Não pegou as tags filhas -> '+porMarca.innerText) // não pega as tags filhas
+        document.write('<br> Pegou as tags filhas ->'+porMarca.innerHTML) // pega a formatação incluindo as tags filhas, nesse caso o strong
+
+        var porId = document.getElementById('titulo').style.font = 'normal 20pt Arial'    
+
+        var porNome = document.getElementsByName('teste')[0].innerText = 'Conteudo alterado da tag NAME'
+        
+        var porClasse = document.getElementsByClassName('msg')[0]
+        porClasse.style.background = 'green'
+
+        // Algumas navegadores não suportam o querySelection
+        var porSeletor = document.querySelector('div#titulo').style.color = 'red' // se for id é '#'
+        document.querySelector('div.msg').style.color = 'black' // se for class é '.'       
+    </script>
+</body>
+</html>

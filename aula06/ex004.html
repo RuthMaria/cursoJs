@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = prompt('Digite o seu nome')
+        document.write(`Olá, <strong>${nome}</strong>! Seu nome têm ${nome.length} letras <br>`)        
+        document.write(`Seu nome em maiusculo é ${nome.toUpperCase()} <br>`)        
+        document.write(`Seu nome em minusculo é ${nome.toLowerCase()} <br>`)
+        
+        var salario = 1456.9
+        document.write('Seu salario é ' + salario.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}))
+        document.write('<br> salario com duas casas decimais'+salario.toFixed(2))
+        document.write('<br> salario com o ponto trocado por virgula '+salario.toFixed(3).replace('.', ','))
+    </script>
+</body>
+</html>
